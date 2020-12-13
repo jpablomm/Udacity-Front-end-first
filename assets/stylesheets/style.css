@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import "initial.css";
+@import "img-config.css";
+
+.container {
+    background-color: #ffff;
+    font-size: 1.6rem;
+}
+
+/* Header bar style */
+.page-header {
+    background-color: #ffff;
+    position: sticky;
+    top: 0;
+}
+
+.nav-bar {
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 10px 0;
+    background-color: #444;
+    width: 100vw;
+}
+
+#page-title {
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.main-nav {
+    list-style: none;
+    color: aliceblue;
+}
+
+.main-nav__item {
+    display: inline-block;
+}
+
+.main-nav__item a{
+    color: aliceblue;
+}
+
+.main-nav__item a:hover {
+    color: aqua;
+}
+
+.main-nav__item a::after {
+    content: " | ";
+}
+
+/* Footnote style */
+.footer {
+    padding: 10px;
+    border-top: 5px solid black;
+}
+
+/* Other config */
+.post h2 {
+    padding-top: 10px;
+}
+.post, .about-page {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid red;
+}
+
+/* Mobile size */
+.container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: auto 1fr auto;
+}
+
+.page-header {
+    grid-column: 1 / 9;
+}
+.main {
+    grid-column: 1 / 9;
+    grid-row: 2 / 3;
+}
+
+.posts {
+    gap: 10px;
+}
+
+.footer{
+    grid-column: 1 / 9;
+    grid-row: 3 / 4;
+}
+
+/* Tablet size */
+@media (min-width: 600px) {
+    .posts{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .post {
+        width: 45%;
+    }
+}
+
+/* Desktop size */
+@media (min-width: 1260px) {
+    .main {
+        display: grid;
+    }
+    .about-page {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+    .posts {
+        grid-column: 2 / 9;
+        grid-row: 2 / 3;
+        justify-content: space-evenly;
+    }
+}
